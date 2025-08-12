@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바코드 스캐너</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📱 바코드 스캐너</h1>
+        <p>버튼을 클릭하여 카메라를 켜고 바코드를 스캔하세요</p>
+        
+        <div class="scanner-container">
+            <video id="video" autoplay muted></video>
+            <canvas id="canvas" style="display: none;"></canvas>
+            
+            <div class="controls">
+                <button id="startButton" class="btn btn-primary">📷 카메라 시작</button>
+                <button id="stopButton" class="btn btn-secondary" disabled>⏹️ 카메라 중지</button>
+            </div>
+            
+            <div class="result-container">
+                <h3>스캔 결과:</h3>
+                <div id="result" class="result">아직 스캔되지 않았습니다</div>
+            </div>
+            
+            <div class="product-info-container" id="productInfo" style="display: none;">
+                <h3>📦 제품 정보</h3>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img id="productImage" src="" alt="제품 이미지" style="display: none;">
+                    </div>
+                    <div class="product-details">
+                        <h4 id="productName">제품명</h4>
+                        <p id="productBrand"><strong>브랜드:</strong> <span></span></p>
+                        <p id="productIngredients"><strong>성분:</strong> <span></span></p>
+                    </div>
+                    <div class="nutrition-info">
+                        <h5>🍽️ 영양 정보 (100g 기준)</h5>
+                        <div class="nutrition-grid">
+                            <div class="nutrition-item">
+                                <span class="label">칼로리:</span>
+                                <span id="calories" class="value">-</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="label">탄수화물:</span>
+                                <span id="carbohydrates" class="value">-</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="label">단백질:</span>
+                                <span id="protein" class="value">-</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="label">지방:</span>
+                                <span id="fat" class="value">-</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="label">당류:</span>
+                                <span id="sugars" class="value">-</span>
+                            </div>
+                            <div class="nutrition-item">
+                                <span class="label">나트륨:</span>
+                                <span id="sodium" class="value">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info">
+            <h3>사용법:</h3>
+            <ul>
+                <li>카메라 시작 버튼을 클릭하세요</li>
+                <li>바코드를 카메라에 비추세요</li>
+                <li>자동으로 바코드가 인식됩니다</li>
+                <li>카메라 중지 버튼으로 카메라를 끌 수 있습니다</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

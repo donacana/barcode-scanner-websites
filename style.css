@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.scanner-container {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+#video {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    border-radius: 15px;
+    background: #f0f0f0;
+    display: block;
+    margin: 0 auto 20px;
+    border: 3px solid #e0e0e0;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 12px 24px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+}
+
+.btn-secondary {
+    background: linear-gradient(45deg, #f44336, #da190b);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(45deg, #da190b, #f44336);
+}
+
+.btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.result-container {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+}
+
+.result-container h3 {
+    color: #495057;
+    margin-bottom: 15px;
+}
+
+.result {
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: #495057;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.info h3 {
+    color: #495057;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info li {
+    padding: 10px 0;
+    border-bottom: 1px solid #e9ecef;
+    color: #6c757d;
+    position: relative;
+    padding-left: 30px;
+}
+
+.info li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.info li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .scanner-container {
+        padding: 20px;
+    }
+    
+    #video {
+        height: 250px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 5px;
+    }
+}
+
+/* 제품 정보 스타일 */
+.product-info-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.product-info-container h3 {
+    color: #495057;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border: 2px solid #e9ecef;
+}
+
+.product-image {
+    margin-bottom: 20px;
+}
+
+.product-image img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 15px;
+    border: 3px solid #e9ecef;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.product-details {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.product-details h4 {
+    color: #495057;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.product-details p {
+    color: #6c757d;
+    margin: 10px 0;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.product-details p:last-child {
+    border-bottom: none;
+}
+
+.product-details strong {
+    color: #495057;
+    font-weight: 600;
+}
+
+.nutrition-info {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.nutrition-info h5 {
+    color: #495057;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.nutrition-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.nutrition-item .label {
+    font-weight: 600;
+    color: #495057;
+}
+
+.nutrition-item .value {
+    font-weight: 700;
+    color: #28a745;
+    background: #e8f5e8;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 600px) {
+    .nutrition-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card {
+        padding: 20px;
+    }
+    
+    .product-image img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+} 
